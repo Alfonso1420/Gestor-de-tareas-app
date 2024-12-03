@@ -1,0 +1,96 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+     
+      <div class="div_banner_log_up">
+        Tareas
+        <img src="assets/tasks1.png"  class="imagen_banner_up" alt="Tareas">
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-card>
+    <ion-card-header>
+      <div  class="div_banner_log">
+       
+      </div>
+      
+      <ion-card-title> </ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>    
+        <ion-input label=""  [(ngModel)]="tarea.nombre"   placeholder="Ingrese la tarea"></ion-input>
+      </ion-item>     
+      <br>
+      <ion-button expand="block" color="secondary"  (click)="guardarTarea()">Guardar</ion-button>
+
+      <div>
+
+        <ion-list>
+         
+          <ion-item *ngFor="let l of listaTareas; index as i" >
+            <ion-label>
+              <input (change)="cambiarEstado(i)" id="myCheckbox"  type="checkbox" [checked]="l.completa">
+            <input type="text" value="{{i+1}}-{{l.nombre}}"   [readOnly]="!l.editable"  class="input_sin_borde" style="border-width: 0px;">
+            
+           
+
+  
+        
+
+          
+          </ion-label>
+
+
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <a  (click)="eliminar(i)"> 
+                <img src="assets/edit.png"  class="boton_icon" alt="Tareas"></a>
+                <a (click)="eliminar(i)">Editar</a>  
+              </div>
+              <div class="col-sm">
+                <a  (click)="eliminar(i)"> 
+                  <img src="assets/remove.png"  class="boton_icon" alt="Tareas"></a>
+                  <a (click)="eliminar(i)">Eliminar</a>     
+              </div>
+              <div class="col-sm">
+                <a  (click)="eliminar(i)"> 
+                  <img src="assets/save.png"  class="boton_icon" alt="Tareas"></a>
+                  <a (click)="eliminar(i)">Guardar</a>    
+              </div>
+            </div>
+          </div>
+
+
+
+
+             
+          
+       
+
+
+            
+          </ion-item>
+          
+        </ion-list>
+
+
+      </div>
+
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

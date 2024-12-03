@@ -1,0 +1,7 @@
+{
+  "name": "taks-admin",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
