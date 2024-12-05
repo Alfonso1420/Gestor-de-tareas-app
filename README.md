@@ -1,7 +1,7 @@
 # APLICACION GESTOR DE TAREAS
 
 
-#  COMO EJECUTAR FUENTE 
+
 
 Para la ejecucion del codigo  se  clona el proyecto de la rama main.
 
