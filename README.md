@@ -18,7 +18,7 @@ El proyecto proyecto puede ser ejecutado desde visual code mediante consola medi
 
 # Caso 2: Ejecutar proyecto en android studio con emulador 
 
-Para ejecutar el proyecto en Android studio se puede hacer mediante la terminal estando en el directorio  principal del fuentecon el comando 
+Para ejecutar el proyecto en Android studio se puede hacer mediante la terminal estando en el directorio  principal del fuente con el comando 
 "npx cap open android"  o abriendo directamente los directorios desde el menu de Android Studio 
 
 ![image](https://github.com/user-attachments/assets/c748b48d-187f-4ed0-a916-c5612257eab7)
