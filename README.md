@@ -57,14 +57,16 @@ Funcionalidades extras:
 
 # ADJUNTOS
 
-Se adjunta respuesta al correo de la prueba tecnica documento con documentación detallada del aplicativo los casos de uso validados mediante imagenes y capturas de pantalla 
+Se adjunta aca y en la respuesta al correo de la prueba tecnica archivo PDF con respuestas a las preguntas, documentación detallada del aplicativo los casos de uso validados mediante imagenes y capturas de pantalla 
 
 https://drive.google.com/file/d/1W2OCftswaGMTOiH_w-38-2TKpMnPwWgG/view?usp=sharing
 
 
-
+* Documentacion detallada: 
 [Uploading EntregaPruebaTecnica_IONIC_Alfonso_Cortes.pdf…]()
 
+* APK cargada
+* 
 [APK.zip](https://github.com/user-attachments/files/18017914/APK.zip)
 
 
