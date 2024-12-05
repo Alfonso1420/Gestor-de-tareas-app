@@ -19,21 +19,29 @@ export class LoginPage implements OnInit {
   ngOnInit() {
 
   }
-
-
-  
+  //Metodo para autenticar usuario mendiante conexion a firebase   
    async login(){
-    //Codigo para login en la cuenta del usuario. 
-    const user= await this.ngFireAuth.signInWithEmailAndPassword(this.usuario.email, this.usuario.clave);  
-    if(user.user?.email){
-      this.router.navigate(['/home']);   
-    }else{
-      alert('Error de Ingreso'); 
-    }
-    
   
+     
+    if(this.usuario==null || this.usuario.email==null || this.usuario.clave==null || this.usuario.email=='' || this.usuario.clave==''){
+      alert('Debe ingresar usuario y clave'); 
+    }else{
+
+      try {
+    const user= await this.ngFireAuth.signInWithEmailAndPassword(this.usuario.email, this.usuario.clave);  
+    
+        if(user.user?.email){
+          this.router.navigate(['/home']);   
+        }else{
+          alert('Error de Ingreso'); 
+        }
+  } catch(error) {  
+    alert(error); 
+  }
+  }  
    }
 
+   //Metodo que registra usuario en listado de firebase, mediante llamando de metodo createUserWithEmailAndPassword
    async registrar(){    
     const user= await this.ngFireAuth.createUserWithEmailAndPassword(this.usuario.email, this.usuario.clave);
     console.log(user); 
