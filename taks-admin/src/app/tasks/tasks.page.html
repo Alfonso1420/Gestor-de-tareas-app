@@ -1,86 +1,95 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-     
-      <div class="div_banner_log_up">
-        Tareas
-        <img src="assets/tasks1.png"  class="imagen_banner_up" alt="Tareas">
+    <ion-title color="secondary">    
+     <div  class="div_arriba_principal">
+        <div  class="div_arriba_1"  >          
+          Tareas</div>
+        <div class="div_arriba_2">
+          <a  [routerLink]="['/home']"> 
+          <img src="assets/tasks1.png"  class="imagen_banner_up" alt="Tareas">     
+        </a>       
+          </div>
+          <div class="div_arriba_2"> <a [routerLink]="['/']" class="link_nav"> Cerrar Sesión</a> </div>          
       </div>
-    </ion-title>
+   </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">
+      
+
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 
-
   <ion-card>
     <ion-card-header>
-      <div  class="div_banner_log">
-       
-      </div>
-      
-      <ion-card-title> </ion-card-title>
+      <ion-card-title>            
+      </ion-card-title>
       <ion-card-subtitle></ion-card-subtitle>
     </ion-card-header>
   
     <ion-card-content>
-      <ion-item>    
-        <ion-input label=""  [(ngModel)]="tarea.nombre"   placeholder="Ingrese la tarea"></ion-input>
-      </ion-item>     
-      <br>
-      <ion-button expand="block" color="secondary"  (click)="guardarTarea()">Guardar</ion-button>
 
+      <ion-item>
+        <ion-button expand="block"   (click)="nuevaTareaForm()"  color="secondary" >             
+          Agregar Tarea</ion-button>
+          <br>
+          <ion-button expand="block"   (click)="nuevaCategoriaForm()"  color="warning" > Categorias</ion-button>
+           
+      </ion-item>    
+      
+
+      <ion-item>      
+       <ion-select label="Seleccionar categoria:"  id="select_categorias" placeholder="Seleccione Categoria" [(ngModel)]="categoriaSelect"  (ionChange)="selectEvent()"   >
+          <ion-select-option   value="Todas"> Todas </ion-select-option>
+        
+          <ion-select-option   *ngFor="let l of listaCategorias; index as i"     value="{{l.nombre}}"> {{l.nombre}} </ion-select-option>
+        </ion-select>
+    
+
+      </ion-item>      
       <div>
 
-        <ion-list>
-         
-          <ion-item *ngFor="let l of listaTareas; index as i" >
-            <ion-label>
-              <input (change)="cambiarEstado(i)" id="myCheckbox"  type="checkbox" [checked]="l.completa">
-            <input type="text" value="{{i+1}}-{{l.nombre}}"   [readOnly]="!l.editable"  class="input_sin_borde" style="border-width: 0px;">
-            
-           
 
   
-        
+        <ion-list>         
+          <ion-item *ngFor="let l of listaTareas; index as i" >
+           
+           <div class="div_p_item_tareas">
 
-          
-          </ion-label>
+          <div  class="div_item_mediano_tareas" >
 
+            <div style="width: 100%;height:auto">
 
-          <div class="container">
-            <div class="row">
-              <div class="col-sm">
-                <a  (click)="eliminar(i)"> 
-                <img src="assets/edit.png"  class="boton_icon" alt="Tareas"></a>
-                <a (click)="eliminar(i)">Editar</a>  
+              <div style="width: 10%; height: 40px; float: left;">
+                <input (change)="cambiarEstado(i)" id="myCheckbox"  type="checkbox" [checked]="l.completa">
               </div>
-              <div class="col-sm">
-                <a  (click)="eliminar(i)"> 
-                  <img src="assets/remove.png"  class="boton_icon" alt="Tareas"></a>
-                  <a (click)="eliminar(i)">Eliminar</a>     
+              <div style="width:90%; height: auto; float: left;">
+                <div class="div_texto_fit">{{l.nombre}} </div>               
+                
               </div>
-              <div class="col-sm">
-                <a  (click)="eliminar(i)"> 
-                  <img src="assets/save.png"  class="boton_icon" alt="Tareas"></a>
-                  <a (click)="eliminar(i)">Guardar</a>    
+              <div style="width: 100%; height: auto; float: left;">
+                <label style="font-weight: bold;"> Categoria</label>
+                <input type="text" value="{{l.categoria}}"   [readOnly]="!l.editable"  class="input_sin_borde" style="border-width: 0px;">
+               
               </div>
             </div>
-          </div>
-
-
-
-
-             
-          
-       
-
-
+            </div>
+            <div class="div_item_angosto_tareas" >
+              <a  (click)="editar(i)"> 
+                <img src="assets/edit.png"  class="boton_icon" alt="Tareas"></a>
+                <a (click)="editar(i)" class="link_icono">Editar</a>  
+            </div>        
+            <div  class="div_item_angosto_tareas" >
+              <a  (click)="eliminar(i)"> 
+                <img src="assets/remove.png"  class="boton_icon" alt="Tareas"></a>
+                <a (click)="eliminar(i)" class="link_icono" >Eliminar</a>  
+            </div>
+          </div>           
             
           </ion-item>
           

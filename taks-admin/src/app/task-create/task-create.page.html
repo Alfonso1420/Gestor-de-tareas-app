@@ -1,11 +1,18 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-     
-      <div class="div_banner_log_up">
-        Crear tarea  
-        <img src="assets/tasks1.png"  class="imagen_banner_up" alt="Tareas">
+    <ion-title color="secondary">
+      <div  class="div_arriba_principal">
+        <div  class="div_arriba_1"  >Agregar Tarea</div>
+        <div class="div_arriba_2">
+          <a  [routerLink]="['/home']"> 
+          <img src="assets/tasks1.png"  class="imagen_banner_up" alt="Tareas">  </a>          
+          </div>
+          <div class="div_arriba_2"> <a [routerLink]="['/tasks']" class="link_nav"> Tareas</a> </div>
+          
       </div>
+
+
+        
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -20,28 +27,28 @@
 
   <ion-card>
     <ion-card-header>
-      <div  class="div_banner_log">
-       
-      </div>
-      
-      <ion-card-title> </ion-card-title>
+     <ion-card-title> </ion-card-title>
       <ion-card-subtitle></ion-card-subtitle>
-    </ion-card-header>
-  
+    </ion-card-header>  
     <ion-card-content>
+      <ion-item> 
+        <label>Ingrese los datos: </label>
+      </ion-item>
       <ion-item>    
-        <ion-input label=""  placeholder="Nombre"></ion-input>
+        <ion-input label=""  placeholder="Nombre"  [(ngModel)]="tarea.nombre"  ></ion-input>
       </ion-item>
       <br>
-      <ion-item>    
-        <ion-input label=""  placeholder="Descripcion"></ion-input>
+      <ion-item>
+        <ion-select label="Categoria:" placeholder="Seleccione Categoria" [(ngModel)]="tarea.categoria"  >
+          <ion-select-option   *ngFor="let l of listaCategorias; index as i"     value="{{l.nombre}}"> {{l.nombre}} </ion-select-option>
+        </ion-select>
       </ion-item>
       <br>
-      <ion-button expand="block" color="secondary">Guardar</ion-button>
-  
+      <ion-button expand="block" color="secondary"  (click)="guardarTarea()" >Guardar</ion-button>
+      <br>
+      <ion-button expand="block" color="medium"  (click)="listaTareasForm()" >Cancelar</ion-button>
 
 
     </ion-card-content>
   </ion-card>
-
 </ion-content>

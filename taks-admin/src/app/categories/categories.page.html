@@ -1,0 +1,150 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="secondary">   
+      <div  class="div_arriba_principal">
+        <div  class="div_arriba_1" >Agregar nueva categoria</div>
+        <div class="div_arriba_2">
+          <a  [routerLink]="['/home']"> 
+          <img src="assets/tasks1.png"  class="imagen_banner_up" alt="Tareas">  
+          </a>        
+          </div>
+          <div class="div_arriba_2"> <a [routerLink]="['/tasks']" class="link_nav"> Tareas</a> </div>
+          
+      </div>
+      
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>Menu Content</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">This is the menu content.</ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding"> Tap the button in the toolbar to open the menu. </ion-content>
+  </div>
+
+
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+    <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+     <ion-card-title> Categorias </ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>  
+    <ion-card-content>
+      
+      <ion-button style="width: 100%;" [routerLink]="['/categories-create']" color="secondary"  *ngIf="permitirAgregarCategorias"  >Crear Categoria</ion-button>
+     <label  *ngIf="!permitirAgregarCategorias" style="font-weight: bold; color:blue" >Advertencia: El modulo de agregar categorias fue temporalmente desbilidado</label>
+        
+     
+      <ion-item> 
+        
+        <ion-list>
+           <ion-item>
+
+            
+            <div class="div_p_item_tareas">
+
+              <div  class="div_item_mediano_tareas" >
+                
+    
+                <div style="width: 100%;height:auto">
+    
+            
+                  <div style="width:50%; height: auto; float: left;">
+                     <strong>Categoria</strong>
+                  </div>
+                  <div style="width: 50%; height: auto; float: left;">
+                    <strong>Prioridad</strong>
+                  </div>    
+    
+                </div>    
+                </div>
+                <div class="div_item_angosto_tareas" >          
+                </div>
+                <div  class="div_item_angosto_tareas" >                 
+                </div>
+           
+              </div>
+
+
+
+           </ion-item>
+
+          <ion-item   *ngFor="let l of listaCategorias; index as i" >
+          
+              <div class="div_p_item_tareas">
+
+                <div  class="div_item_mediano_tareas" >
+                  
+      
+                  <div style="width: 100%;height:auto">
+      
+              
+                    <div style="width:50%; height: auto; float: left;">
+                      <input type="text" value=" {{l.nombre}}"   [readOnly]="!l.editable"  class="input_sin_borde" style="border-width: 0px;">
+         
+                    </div>
+                    <div style="width: 50%; height: auto; float: left;">
+                      <input type="text" value="{{l.prioridad}}"   [readOnly]="!l.editable"  class="input_sin_borde" style="border-width: 0px;">
+       
+                    </div>
+      
+      
+                  </div>
+      
+                  </div>
+                  <div class="div_item_angosto_tareas" >
+                    <a  (click)="editar(i)"> 
+                      <img src="assets/edit.png"  class="boton_icon" alt="Tareas"></a>
+                      <a (click)="editar(i)" class="link_icono">Editar</a>  
+                  </div>
+               
+                  <div  class="div_item_angosto_tareas" >
+                    <a  (click)="eliminar(i)"> 
+                      <img src="assets/remove.png"  class="boton_icon" alt="Tareas"></a>
+                      <a (click)="eliminar(i)" class="link_icono" >Eliminar</a>  
+                  </div>
+                </div>
+           
+                
+
+          
+          </ion-item>
+         
+        </ion-list>
+
+        
+     
+      </ion-item>
+     
+
+
+   
+    </ion-card-content>
+  </ion-card>
+
+
+
+</ion-content>

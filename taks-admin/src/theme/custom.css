@@ -5,3 +5,21 @@
 .input_sin_borde{border-width: 0px;}
 .boton_icon{width: 30px;background-color: transparent;}
 .item_menu_list{width: 100px; text-align: center; font-size: x-small;}
+.imagen_home{width: 80%; height: auto; max-width: 150px;}
+.items_centrados{align-items: center;}
+.div_arriba_principal{width: 100%; height: 50px;}
+.div_arriba_1{width: 70%;height:50px;align-items: left;float: left; padding-top: 15px; padding-left: 10px;}
+.div_arriba_2{width: 15%;height:50px;align-items:right; float: left;}
+.link_nav{font-size:small;}
+
+
+.imagen_boton_grande{width: 20px;height: auto;}
+.boton_formulario1{width: 100%; height: 30px;}
+
+/*Estilos para listado de tareas*/
+.div_p_item_tareas{width: 100%; height: auto;}
+.div_item_mediano_tareas{width: 55%;height: auto;float: left;}
+.div_item_angosto_tareas{width: 15%;height: 50px;float: left;}
+.link_icono{font-size: x-small;position: relative;top: -10px;}
+
+.div_texto_fit{ text-align: left; position: relativa; width: 90%; top: 50%; left: 1%;   right: 1%;  }

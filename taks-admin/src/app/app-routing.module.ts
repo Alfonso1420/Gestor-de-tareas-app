@@ -23,6 +23,14 @@ const routes: Routes = [
     path: 'task-create',
     loadChildren: () => import('./task-create/task-create.module').then( m => m.TaskCreatePageModule)
   },
+  {
+    path: 'categories',
+    loadChildren: () => import('./categories/categories.module').then( m => m.CategoriesPageModule)
+  },
+  {
+    path: 'categories-create',
+    loadChildren: () => import('./categories-create/categories-create.module').then( m => m.CategoriesCreatePageModule)
+  },
 ];
 
 @NgModule({
