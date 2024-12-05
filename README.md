@@ -32,7 +32,45 @@ usuario: alfonsocm1420@gmail.com
 clave: 123456
 
 
+Se carga APK en el URL: https://drive.google.com/file/d/1ZhjArdAAdaB2ITUh1ZypSX7KgVs7-8M4/view?usp=drive_link
+
+
+
 ![image](https://github.com/user-attachments/assets/5ab52ecc-fed0-4af5-9938-c4cb8d6dd0f6)
+
+
+# Funcionalidades desarrolladas 
+
+Se desarrollan funcionalidades solicitadas: 
+
+* Creacion, edicion y eliminacion de tareas.
+* Creacion, edicion y eliminarion de categorias.
+* Asociacion de categorias a tareas.
+* Marcar y desmarcar tareas como realizadas.
+* Conexion a firebase para control activar o desactivar modulo (Se prueba con boton agregar categorias).
+
+Funcionalidades extras: 
+*  Se desarrolla sistema login con conexion a firebase
+*  Se agrega subcategoria a la categoria, agregando campo  prioridad a la categoria que puede ser (alta, media, baja)
+
+
+
+# ADJUNTOS
+
+Se adjunta respuesta al correo de la prueba tecnica documento con documentación detallada del aplicativo los casos de uso validados mediante imagenes y capturas de pantalla 
+
+https://drive.google.com/file/d/1W2OCftswaGMTOiH_w-38-2TKpMnPwWgG/view?usp=sharing
+
+
+
+[Uploading EntregaPruebaTecnica_IONIC_Alfonso_Cortes.pdf…]()
+
+[APK.zip](https://github.com/user-attachments/files/18017914/APK.zip)
+
+
+
+Alfonso Cortes Meneses. 
+alfonsocm1420@gmail.com
 
 
 
